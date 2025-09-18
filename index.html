@@ -51,18 +51,9 @@
     .brand img { height: 44px; width: auto; display: block; }
     .brand .wordmark { font-weight: 800; font-size: 14px; color: var(--muted); }
 
-    .card {
-      background: linear-gradient(180deg, #131313, #0f0f0f);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      margin-bottom: 22px;
-    }
-
-    .card:not(:last-child) {
-      margin-bottom: 22px;
-    }
-
+    .card + .card { margin-top: 22px; }
+    .grid .card { margin: 0; }
+    
     .hero {
       margin-top: 32px;
       padding: 28px;
@@ -129,11 +120,14 @@
       border: 1px solid var(--border);
       box-shadow: var(--shadow);
     }
+
     .media figcaption {
       font-size: 13px;
       color: #9a9a9a;
       margin-top: 6px;
     }
+
+    #blog h2 { margin-bottom: 12px; font-size: 22px; }
   </style>
 </head>
 <body>
@@ -148,8 +142,11 @@
 
     <main>
       <section class="card hero" aria-label="DevPops Hero">
-        <img class="logo" src="assets/devpops-logo.png" alt="DevPops Inc logo large" />
-        <img class="me" src="assets/vic.jpg" alt="Photo of Vic Phan" />
+        <img class="logo" src="assets/devpops-logo.png" alt="DevPops Inc logo large"
+              width="620" height="300" decoding="async" fetchpriority="high" />
+
+        <img class="me" src="assets/vic.jpg" alt="Photo of Vic Phan"
+            width="340" height="440" loading="lazy" decoding="async" />
       </section>
 
       <section class="card intro" aria-labelledby="intro-heading">
@@ -205,7 +202,7 @@
         </article>
       </section>
       <section class="card post" id="blog" aria-labelledby="blog-heading">
-        <h2 id="blog-heading" style="margin:0 0 10px;font-size:22px;">Blog</h2>
+        <h2 id="blog-heading">Blog</h2>
       
         <article class="prose" aria-labelledby="post-1-title">
           <h3 id="post-1-title">My Journey from Filmmaker to DevOps Engineer</h3>
